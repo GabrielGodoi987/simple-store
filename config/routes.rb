@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  # Rota GET apenas para visualização (página de login)
+  get "auth/login"
+  # Rota POST para processamento do login
+  post "auth/login", to: "auth#login"
+
+  resources :users
   resources :categories
   resources :products
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
